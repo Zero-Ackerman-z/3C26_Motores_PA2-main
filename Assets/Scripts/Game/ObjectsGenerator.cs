@@ -47,25 +47,36 @@ public class ObjectGenerator : MonoBehaviour
 
     public void ManageObjects(ObjectsController candyScript, PlayerMovement playerScript = null)
     {
+        ScoreData scoreData = new ScoreData();
         if (playerScript == null)
         {
             Destroy(candyScript.gameObject);
             RemoveCandyFromList(candyScript.gameObject);
+            int scoreToAdd = candyScript.frame; // Obtener el puntaje del objeto
+            scoreData.AddScore(scoreToAdd); // Agregar el puntaje al jugador
         }
-        if (candyScript.frame == 3)
+        else
         {
-            SceneManager.LoadScene("GameOver");
-            return;
+            int scoreToAdd = candyScript.frame; // Obtener el puntaje del objeto
+            scoreData.AddScore(scoreToAdd); // Agregar el puntaje al jugador
+
+            if (candyScript.frame == 3)
+            {
+                SceneManager.LoadScene("GameOver");
+                return;
+            }
+
+            int lives = playerScript.player_lives;
+            int liveChanger = candyScript.lifeChanges;
+            lives += liveChanger;
+
+            if (lives <= 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+
+            playerScript.player_lives = lives;
         }
-        int lives = playerScript.player_lives;
-        int liveChanger = candyScript.lifeChanges;
-        lives += liveChanger;
-        print(lives);
-        if (lives <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
-        playerScript.player_lives = lives;
         Destroy(candyScript.gameObject);
         RemoveCandyFromList(candyScript.gameObject);
 

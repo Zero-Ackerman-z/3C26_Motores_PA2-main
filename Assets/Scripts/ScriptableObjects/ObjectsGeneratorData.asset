@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: ObjectsGeneratorData
   m_EditorClassIdentifier: 
   timeToCreate: 4
-  limitSuperior: 0
-  limitInferior: 0
+  limitSuperior: 4.5
+  limitInferior: -4.5
   Objects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8797156168420755282, guid: 7344bea7a801eb741a5a0da2d9c9e5e8, type: 3}
+  - {fileID: 6185296109276427882, guid: 099cec35cd3d22a4f8fbbc8948683c10, type: 3}
+  - {fileID: 5311973870086506349, guid: 79db077fe4e9a3c40989c7b86578789e, type: 3}
+  - {fileID: 5991686176134336339, guid: 4ca734ed6332dc14a9ac2932634e3cdd, type: 3}
+  - {fileID: 7679793561126234375, guid: e7542e08ec32cc64a9cdd3742cb2457d, type: 3}
+  - {fileID: 792570258711460363, guid: 7fefa9a346d171d4a98a9af2798080e8, type: 3}
+  - {fileID: 8231676687062525256, guid: 0a1c90d638a3d834c97fb87bd6714907, type: 3}
+  - {fileID: 4741160354812593281, guid: f7d8522e34504cb4b97d4ced07cda1fa, type: 3}
+  - {fileID: 3593351113157584290, guid: 327f80825b511ba42a7b7dc3b4c304fa, type: 3}

@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public int player_lives = 4;
     private Vector2 movimientoInput;
     private bool isInvulnerable = false;
-
+    public ScoreData scoreData;
     private void Awake()
     {
         controls = new InputActionsController();
@@ -66,19 +66,6 @@ public class PlayerMovement : MonoBehaviour
         limitInferior = -bounds.y;
         limitSuperior = bounds.y;
     }
-    // Método para activar temporalmente la invulnerabilidad del jugador
-    public void ActivateInvulnerability(float duration)
-    {
-        isInvulnerable = true;
-        Invoke("DeactivateInvulnerability", duration);
-    }
-
-    // Método para desactivar la invulnerabilidad del jugador
-    private void DeactivateInvulnerability()
-    {
-        isInvulnerable = false;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Candy")
@@ -100,4 +87,6 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(1f);
         isInvulnerable = false;
     }
+    
+    
 }
